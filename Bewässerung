@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import RPi.GPIO as GPIO
-from feuchtigkeit_freq00 import frq_read
+from feuchtigkeit_freq00 import frq_read # Signal vom Feuchtigkeitssensor 
 import time
-import lcddriver
+import lcddriver # für LCD Display
 
 
 freq = frq_read()
@@ -14,7 +14,7 @@ GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
         
 GPIO.setwarnings(False)
  
-RELAIS_1_GPIO = 19
+RELAIS_1_GPIO = 19 # Relais für Pumpe
 
 if freq >= 6000:
     lcd.lcd_display_string('frisch gegossen', 1)
